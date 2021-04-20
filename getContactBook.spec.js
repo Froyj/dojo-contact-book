@@ -16,7 +16,7 @@ test('single person data is correctly formated', () => {
       info: { phone: '075 129 59 20' },
     },
   ];
-  expect(getContactBook(singlePersonData)).toBe({
+  expect(getContactBook(singlePersonData)).toMatchObject({
     N: [{ fullName: 'Nora Deschamps', phone: '075 129 59 20' }],
   });
 });
@@ -34,7 +34,7 @@ test('differents persons correctly sorted (first letter differs)  ', () => {
       info: { phone: '(486)-403-4002' },
     },
   ];
-  expect(getContactBook(singlePersonData)).toBe({
+  expect(getContactBook(singlePersonData)).toMatchObject({
     J: [{ fullName: 'John Gehrmann', phone: '(486)-403-4002' }],
     N: [{ fullName: 'Nora Deschamps', phone: '075 129 59 20' }],
   });
@@ -58,7 +58,7 @@ test('differents persons correctly sorted (some first letter are the same)  ', (
       info: { phone: '00-4984-8539' },
     },
   ];
-  expect(getContactBook(singlePersonData)).toBe({
+  expect(getContactBook(singlePersonData)).toMatchObject({
     J: [
       { fullName: 'John Gehrmann', phone: '(486)-403-4002' },
       { fullName: 'Jack Owens', phone: '00-4984-8539' },
@@ -77,8 +77,8 @@ test('differents persons correctly sorted (some first letter are the same)  ', (
       },
     },
     {
-      firstName: 'Tristan',
-      lastName: 'Adams',
+      firstName: 'Adam',
+      lastName: 'Beck',
       info: {
         phone: '(287)-238-6394',
       },
@@ -87,7 +87,7 @@ test('differents persons correctly sorted (some first letter are the same)  ', (
       firstName: 'Alfredo',
       lastName: 'Altmann',
       info: {
-        phone: '(287)-238-6394',
+        phone: '(347)-275-9383',
       },
     },
     {
@@ -98,7 +98,7 @@ test('differents persons correctly sorted (some first letter are the same)  ', (
       },
     },
   ];
-  expect(getContactBook(jsonData)).toBe({
+  expect(getContactBook(jsonData)).toMatchObject({
     A: [
       {
         fullName: 'Adam Beck',
@@ -123,5 +123,3 @@ test('differents persons correctly sorted (some first letter are the same)  ', (
     ],
   });
 });
-
-
