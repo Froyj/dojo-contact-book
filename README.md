@@ -1,8 +1,20 @@
-// Vous avez a disposition un fichier json qui regroupe des informations a propos d'un ensemble de personne,
-// le but de ce dojo est d'ecrire une fonction getContactBook qui permet de générer un carnet de contacts rangé par ordre alphabetique (nom de famille)
+# Installation
 
-// exemple :
+* Clone the repo
+* Run `npm install`
+* Write your code
+* Run the test with `npm test` 
 
+## EN version 
+You have at your disposal a json file that gathers information about a set of people,
+the goal of this dojo is to write a getContactBook function that allows to generate a contact book sorted by alphabetical order and summarizing the information in a simpler format
+
+## FR version 
+Vous avez a disposition un fichier json qui regroupe des informations a propos d'un ensemble de personne,
+le but de ce dojo est d'ecrire une fonction getContactBook qui permet de générer un carnet de contacts rangé par ordre alphabetique et synthetisant les informations dans un format plus simple
+
+#### Dataset :
+```
 [
   {
     firstName: 'Mary',
@@ -33,10 +45,10 @@
     },
   },
 ];
-
-// results ==>
-
-const result = {
+```
+#### Expected results
+```
+{
   A: [
     {
       fullName: 'Adam Beck',
@@ -60,3 +72,4 @@ const result = {
     },
   ],
 };
+```
